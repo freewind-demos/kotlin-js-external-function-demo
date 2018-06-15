@@ -1,8 +1,11 @@
 package example
 
 fun main(args: Array<String>) {
-    console.log(hello("Kotlin JS"))
+    window.alert("Hello, Kotlin")
 }
 
-fun hello(name:String) = "Hello, $name!"
+@JsName("window")
+external object window {
+    fun alert(message: String)
+}
 
